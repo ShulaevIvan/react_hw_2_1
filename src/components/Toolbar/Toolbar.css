@@ -1,0 +1,13 @@
+.filter-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.filter-btn-wrap {
+    max-width: 200px;
+    margin: 0 2px;
+}
+.filter-btn-active {
+    border: 1px solid red;
+}

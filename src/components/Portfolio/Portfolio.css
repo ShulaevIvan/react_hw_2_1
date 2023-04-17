@@ -1,0 +1,13 @@
+.portfolio-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 33%;
+    width: 30%;
+    margin:0 5px;
+}
