@@ -13,8 +13,8 @@ class Portfolio extends Component {
         this.onSelectedFilter = this.onSelectedFilter.bind(this)
     }
 
-    onSelectedFilter(e) {
-        this.selected = e.target.textContent;
+    onSelectedFilter(filter) {
+        this.selected = filter;
         this.setState({
             ...this.state,
             activeFilter: this.selected
@@ -24,13 +24,13 @@ class Portfolio extends Component {
     render() {
         return (
             <React.Fragment>
-                <Toolbar activeFilter= {this.state.activeFilter}  allFilters = {this.state.allFilters} eventFunc = {this.onSelectedFilter.bind(this)}></Toolbar>
+                <Toolbar activeFilter= {this.state.activeFilter}  allFilters = {this.state.allFilters} eventFunc = {this.onSelectedFilter}></Toolbar>
                 <div className='portfolio-wrap'>
                     {this.data.map((item, i) => {
                         if  (item.category === this.selected && this.selected !== 'All') {
                             return (
                                 <div key={i} className='portfolio-item' data-category={item.category}>
-                                    <img src={item.img} />
+                                    <img src={item.img} alt={item.category + ' img'} />
                                 </div>
                             )
                         }

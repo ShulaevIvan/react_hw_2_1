@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 
 const Toolbar = (props) => {
@@ -8,7 +7,7 @@ const Toolbar = (props) => {
             {props.allFilters.map((filter, i) => {
                 props.activeFilter === filter ? classFilter = 'filter-btn-active': classFilter = 'filter-btn-wrap';
                 return (
-                    <div key={i} className={classFilter} onClick={props.eventFunc}>
+                    <div key={i} className={classFilter} onClick={() => {props.eventFunc(filter)}}>
                         <button>{filter}</button>
                     </div>
                 );
